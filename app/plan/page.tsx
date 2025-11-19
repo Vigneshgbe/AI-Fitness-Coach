@@ -19,7 +19,7 @@ export default function PlanPage() {
   if (loading)
     return (
       <p className="text-center text-lg animate-pulse text-blue-500 mt-20">
-        ⚡ Generating your personalized plan…
+        ⚡ Generating your personalized plan....
       </p>
     );
 

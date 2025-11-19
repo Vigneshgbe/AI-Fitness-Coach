@@ -20,7 +20,6 @@ export default function UserForm() {
     setFormData((prev) => ({ ...prev, [key]: value }));
 
   const handleSubmit = () => {
-    // Validate required fields
     const required = ['name', 'age', 'gender', 'height', 'weight', 'goal', 'level', 'location', 'dietaryPref'];
     const missing = required.filter(field => !formData[field]);
     
@@ -30,7 +29,6 @@ export default function UserForm() {
     }
 
     setLoading(true);
-    // Store data in memory (localStorage not supported in artifacts)
     console.log("Form submitted:", formData);
     setTimeout(() => {
       setLoading(false);
@@ -52,7 +50,7 @@ export default function UserForm() {
 
         <div className="bg-white p-6 sm:p-8 rounded-3xl shadow-lg border border-gray-100">
           <div className="space-y-5">
-            {/* Personal Information Section */}
+
             <div>
               <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center gap-2">
                 <span className="text-blue-600">👤</span> Personal Information
@@ -86,7 +84,6 @@ export default function UserForm() {
               </SelectContent>
             </Select>
 
-            {/* Physical Metrics */}
             <div>
               <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center gap-2">
                 <span className="text-green-600">📊</span> Physical Metrics
@@ -111,7 +108,7 @@ export default function UserForm() {
               </div>
             </div>
 
-            {/* Fitness Goals */}
+
             <div>
               <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center gap-2">
                 <span className="text-purple-600">🎯</span> Fitness Goals
@@ -153,7 +150,7 @@ export default function UserForm() {
               </div>
             </div>
 
-            {/* Nutrition & Lifestyle */}
+
             <div>
               <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center gap-2">
                 <span className="text-orange-600">🥗</span> Nutrition & Lifestyle
@@ -190,7 +187,6 @@ export default function UserForm() {
               </div>
             </div>
 
-            {/* Submit Button */}
             <Button
               onClick={handleSubmit}
               disabled={loading}

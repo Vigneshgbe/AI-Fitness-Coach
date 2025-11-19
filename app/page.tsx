@@ -11,10 +11,10 @@ export default function Home() {
       className="flex flex-col items-center justify-center space-y-8"
     >
       <h1 className="text-4xl font-bold text-center">
-        🧠 Your Personal AI Fitness Coach
+        AI Fitness Coach
       </h1>
       <p className="text-center text-muted-foreground max-w-md">
-        Enter your details and let AI craft your personalized workout and diet plan.
+        Let AI craft your personalized workout and diet plan.
       </p>
       <UserForm />
     </motion.div>
