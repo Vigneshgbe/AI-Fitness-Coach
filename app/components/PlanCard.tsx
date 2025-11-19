@@ -9,7 +9,6 @@ type PlanCardProps = {
 };
 
 export default function PlanCard({ title = "Plan", subtitle, children }: PlanCardProps) {
-    // Structure-only: card that will display generated plan content
     return (
         <article className="w-full rounded-lg border p-4 shadow-sm">
             <header className="mb-2 flex items-center justify-between">
@@ -18,7 +17,7 @@ export default function PlanCard({ title = "Plan", subtitle, children }: PlanCar
                     {subtitle && <p className="text-sm text-muted-foreground">{subtitle}</p>}
                 </div>
             </header>
-            <section className="prose max-w-none">{children ?? <p className="text-sm">No plan yet.</p>}</section>
+            <section className="prose max-w-none">{children ?? <p className="text-sm">No plans yet..</p>}</section>
         </article>
     );
 }
