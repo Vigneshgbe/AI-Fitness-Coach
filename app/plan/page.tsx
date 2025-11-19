@@ -65,11 +65,11 @@ export default function PlanPage() {
       transition={{ duration: 0.7 }}
       className="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8"
     >
-      <div className="text-center mb-8">
-        <h2 className="text-4xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+      <div className="text-center mb-10">
+        <h2 className="text-4xl sm:text-5xl font-bold mb-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
           Your AI Fitness Plan
         </h2>
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className="text-gray-600 dark:text-gray-400 text-lg">
           Swipe through your personalized workout, diet, and tips
         </p>
       </div>
@@ -83,16 +83,19 @@ export default function PlanPage() {
                 {workoutPlan.map((day: any, i: number) => (
                   <div
                     key={i}
-                    className="rounded-2xl border border-blue-100 dark:border-blue-900 bg-gradient-to-br from-blue-50 to-white dark:from-blue-950 dark:to-slate-900 shadow-sm hover:shadow-md transition-shadow p-5"
+                    className="rounded-2xl border border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-blue-950/50 dark:via-slate-900 dark:to-blue-950/50 shadow-md hover:shadow-xl transition-all duration-300 p-6"
                   >
-                    <h4 className="text-lg font-bold text-blue-700 dark:text-blue-400 mb-3">
-                      {day.day || `Day ${i + 1}`} — {day.focus}
-                    </h4>
-                    <ul className="space-y-3">
+                    <div className="flex items-center gap-2 mb-4 pb-3 border-b border-blue-200 dark:border-blue-800">
+                      <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-blue-700 rounded-full"></div>
+                      <h4 className="text-xl font-bold text-blue-700 dark:text-blue-400">
+                        {day.day || `Day ${i + 1}`} — {day.focus}
+                      </h4>
+                    </div>
+                    <ul className="space-y-4">
                       {day.exercises?.map((ex: any, j: number) => (
                         <li
                           key={j}
-                          className="flex flex-col gap-2 border-l-4 border-blue-500 dark:border-blue-400 pl-4 py-2"
+                          className="flex flex-col gap-2 border-l-4 border-blue-500 dark:border-blue-400 bg-white/50 dark:bg-slate-800/50 rounded-r-lg pl-4 pr-3 py-3 hover:bg-white dark:hover:bg-slate-800 transition-colors"
                         >
                           <span className="font-semibold text-gray-900 dark:text-gray-100">
                             {ex.name}
@@ -125,11 +128,14 @@ export default function PlanPage() {
                 {dietPlan.map((day: any, i: number) => (
                   <div
                     key={i}
-                    className="rounded-2xl border border-green-100 dark:border-green-900 bg-gradient-to-br from-green-50 to-white dark:from-green-950 dark:to-slate-900 shadow-sm hover:shadow-md transition-shadow p-5"
+                    className="rounded-2xl border border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 via-white to-green-50 dark:from-green-950/50 dark:via-slate-900 dark:to-green-950/50 shadow-md hover:shadow-xl transition-all duration-300 p-6"
                   >
-                    <h4 className="text-lg font-bold text-green-700 dark:text-green-400 mb-3">
-                      {day.day || `Day ${i + 1}`}
-                    </h4>
+                    <div className="flex items-center gap-2 mb-4 pb-3 border-b border-green-200 dark:border-green-800">
+                      <div className="w-2 h-8 bg-gradient-to-b from-green-500 to-green-700 rounded-full"></div>
+                      <h4 className="text-xl font-bold text-green-700 dark:text-green-400">
+                        {day.day || `Day ${i + 1}`}
+                      </h4>
+                    </div>
                     <ul className="space-y-3 text-gray-900 dark:text-gray-100">
                       <li className="pl-2">
                         <strong className="text-green-700 dark:text-green-400">Breakfast:</strong> {day.breakfast}
