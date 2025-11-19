@@ -18,16 +18,29 @@ export default function PlanPage() {
 
   if (loading)
     return (
-      <p className="text-center text-lg animate-pulse text-blue-500 mt-20">
-        ⚡ Generating your personalized plan....
-      </p>
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center space-y-4">
+          <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <p className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+            Generating your personalized plan...
+          </p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            This may take a few moments
+          </p>
+        </div>
+      </div>
     );
 
   if (error)
     return (
-      <p className="text-center text-red-500 mt-20">
-        ❌ {error}
-      </p>
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-2xl p-8 max-w-md text-center">
+          <div className="text-5xl mb-4">❌</div>
+          <p className="text-red-600 dark:text-red-400 font-semibold text-lg">
+            {error}
+          </p>
+        </div>
+      </div>
     );
 
   if (!plan) return null;
@@ -50,11 +63,16 @@ export default function PlanPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.7 }}
-      className="max-w-4xl mx-auto p-4"
+      className="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8"
     >
-      <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
-        🎯 Your AI Fitness Plan
-      </h2>
+      <div className="text-center mb-8">
+        <h2 className="text-4xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          Your AI Fitness Plan
+        </h2>
+        <p className="text-gray-600 dark:text-gray-400">
+          Swipe through your personalized workout, diet, and tips
+        </p>
+      </div>
 
       <Slider {...settings}>
         {/* 🏋️ Workout Plan */}
@@ -65,21 +83,21 @@ export default function PlanPage() {
                 {workoutPlan.map((day: any, i: number) => (
                   <div
                     key={i}
-                    className="rounded-xl border bg-linear-to-br from-blue-50 to-white shadow-sm p-4"
+                    className="rounded-2xl border border-blue-100 dark:border-blue-900 bg-gradient-to-br from-blue-50 to-white dark:from-blue-950 dark:to-slate-900 shadow-sm hover:shadow-md transition-shadow p-5"
                   >
-                    <h4 className="text-lg font-semibold text-blue-700 mb-2">
+                    <h4 className="text-lg font-bold text-blue-700 dark:text-blue-400 mb-3">
                       {day.day || `Day ${i + 1}`} — {day.focus}
                     </h4>
-                    <ul className="space-y-2">
+                    <ul className="space-y-3">
                       {day.exercises?.map((ex: any, j: number) => (
                         <li
                           key={j}
-                          className="flex flex-col gap-1 border-l-4 border-blue-400 pl-3"
+                          className="flex flex-col gap-2 border-l-4 border-blue-500 dark:border-blue-400 pl-4 py-2"
                         >
-                          <span className="font-medium text-gray-800">
+                          <span className="font-semibold text-gray-900 dark:text-gray-100">
                             {ex.name}
                           </span>
-                          <span className="text-sm text-gray-500">
+                          <span className="text-sm text-gray-600 dark:text-gray-400">
                             {ex.sets} sets × {ex.reps} reps ({ex.rest} rest)
                           </span>
                           <ImageGenerator prompt={ex.name} />
@@ -89,7 +107,7 @@ export default function PlanPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-4 flex justify-center">
+              <div className="mt-6 flex justify-center">
                 <VoicePlayer
                   label="Workout Plan"
                   text={`Here is your personalized workout plan.`}
@@ -107,27 +125,27 @@ export default function PlanPage() {
                 {dietPlan.map((day: any, i: number) => (
                   <div
                     key={i}
-                    className="rounded-xl border bg-linear-to-br from-green-50 to-white shadow-sm p-4 text-blue-950"
+                    className="rounded-2xl border border-green-100 dark:border-green-900 bg-gradient-to-br from-green-50 to-white dark:from-green-950 dark:to-slate-900 shadow-sm hover:shadow-md transition-shadow p-5"
                   >
-                    <h4 className="text-lg font-semibold text-green-700 mb-2">
+                    <h4 className="text-lg font-bold text-green-700 dark:text-green-400 mb-3">
                       {day.day || `Day ${i + 1}`}
                     </h4>
-                    <ul className="space-y-2">
-                      <li>
-                        <strong>Breakfast:</strong> {day.breakfast}
+                    <ul className="space-y-3 text-gray-900 dark:text-gray-100">
+                      <li className="pl-2">
+                        <strong className="text-green-700 dark:text-green-400">Breakfast:</strong> {day.breakfast}
                         <ImageGenerator prompt={day.breakfast} />
                       </li>
-                      <li>
-                        <strong>Lunch:</strong> {day.lunch}
+                      <li className="pl-2">
+                        <strong className="text-green-700 dark:text-green-400">Lunch:</strong> {day.lunch}
                         <ImageGenerator prompt={day.lunch} />
                       </li>
-                      <li>
-                        <strong>Dinner:</strong> {day.dinner}
+                      <li className="pl-2">
+                        <strong className="text-green-700 dark:text-green-400">Dinner:</strong> {day.dinner}
                         <ImageGenerator prompt={day.dinner} />
                       </li>
                       {day.snacks && (
-                        <li>
-                          <strong>Snacks:</strong> {day.snacks}
+                        <li className="pl-2">
+                          <strong className="text-green-700 dark:text-green-400">Snacks:</strong> {day.snacks}
                           <ImageGenerator prompt={day.snacks} />
                         </li>
                       )}
@@ -135,7 +153,7 @@ export default function PlanPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-4 flex justify-center">
+              <div className="mt-6 flex justify-center">
                 <VoicePlayer
                   label="Diet Plan"
                   text={`Here is your personalized diet plan.`}
@@ -145,6 +163,7 @@ export default function PlanPage() {
           </div>
         )}
 
+        {/* 💬 Tips & Motivation */}
         {tips && (
           <div key="tips" className="p-4">
             <PlanCard title="💬 Tips & Motivation">
@@ -152,14 +171,14 @@ export default function PlanPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="p-6 rounded-2xl bg-linear-to-br from-yellow-50 via-orange-50 to-white shadow-lg border border-amber-200"
+                className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-amber-50 via-orange-50 to-white dark:from-amber-950 dark:via-orange-950 dark:to-slate-900 shadow-lg border border-amber-200 dark:border-amber-800"
               >
-                <h3 className="text-2xl font-bold text-amber-700 mb-4 text-center">
+                <h3 className="text-2xl font-bold text-amber-700 dark:text-amber-400 mb-6 text-center">
                   🌟 Motivation & Posture Guidance
                 </h3>
 
                 {/* 🧩 Split the tips into sections */}
-                <div className="space-y-4 text-gray-800 leading-relaxed">
+                <div className="space-y-4 text-gray-800 dark:text-gray-200 leading-relaxed">
                   {tips
                     .split(/\n+/) // Split by blank lines
                     .filter((line: string) => line.trim().length > 0)
@@ -176,13 +195,13 @@ export default function PlanPage() {
                             }`}
                         >
                           {isNumbered && (
-                            <span className="font-semibold text-amber-600 mt-0.5">
+                            <span className="font-semibold text-amber-600 dark:text-amber-400 mt-0.5 flex-shrink-0">
                               {line.match(/^\d+/)?.[0]}.
                             </span>
                           )}
                           <p
                             className={`${line.toLowerCase().includes("posture")
-                                ? "font-semibold text-amber-700 mt-2"
+                                ? "font-semibold text-amber-700 dark:text-amber-300 mt-2"
                                 : ""
                               }`}
                           >
