@@ -54,7 +54,6 @@ yarn dev
 - **Styling**: Tailwind CSS
 - **UI Components**: shadcn/ui
 - **Icons**: Lucide React
-- **AI**: Claude API (Anthropic)
 
 ## 📁 Project Structure
 
