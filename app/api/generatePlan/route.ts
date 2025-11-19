@@ -19,6 +19,42 @@ export async function POST(req: Request) {
               { name: "Bodyweight Squats", sets: 3, reps: "12-15", rest: "60s" },
             ],
           },
+          {
+            day: "Day 2",
+            exercises: [
+              { name: "Plank", sets: 3, duration: "30-60s", rest: "60s" },
+              { name: "Lunges", sets: 3, reps: "10-12", rest: "60s" },
+            ],
+          },
+          {
+            day: "Day 3",
+            exercises: [
+              { name: "Jumping Jacks", sets: 3, reps: "20-30", rest: "60s" },
+              { name: "Sit-ups", sets: 3, reps: "15-20", rest: "60s" },
+            ],
+          },
+          {
+            day: "Day 4",
+            exercises: [
+              { name: "Burpees", sets: 3, reps: "10-15", rest: "60s" },
+              { name: "Mountain Climbers", sets: 3, reps: "20-30", rest: "60s" },
+            ],
+          },
+          { day: "Day 5", exercises: [
+              { name: "High Knees", sets: 3, reps: "20-30", rest: "60s" },
+              { name: "Leg Raises", sets: 3, reps: "15-20", rest: "60s" },
+           ], 
+          },
+          {
+            day: "Day 6", exercises: [
+              { name: "Butt Kicks", sets: 3, reps: "20-30", rest: "60s" },
+              { name: "Russian Twists", sets: 3, reps: "20-30", rest: "60s" },
+           ], 
+          },
+           { day: "Day 7", exercises: [
+               { name: "Rest Day", sets: 0, reps: "0", rest: "0s" },
+           ], 
+          }
         ],
         dietPlan: [
           {
@@ -27,8 +63,44 @@ export async function POST(req: Request) {
             lunch: "Grilled veggies & quinoa",
             dinner: "Salmon & salad",
           },
+          {
+            day: "Day 2",
+            breakfast: "Greek yogurt & nuts",
+            lunch: "Chicken wrap",
+            dinner: "Stir-fried tofu & rice",
+          },
+          {
+            day: "Day 3",
+            breakfast: "Smoothie bowl",
+            lunch: "Lentil soup",
+            dinner: "Grilled chicken & veggies",
+          },
+          {
+            day: "Day 4",
+            breakfast: "Eggs & whole grain toast",
+            lunch: "Turkey sandwich",
+            dinner: "Pasta with marinara sauce",
+          },
+          {
+            day: "Day 5",
+            breakfast: "Fruit & nut butter",
+            lunch: "Veggie salad with chickpeas",
+            dinner: "Baked fish & sweet potato",
+          },
+          {
+            day: "Day 6",
+            breakfast: "Cottage cheese & fruit",
+            lunch: "Quinoa salad",
+            dinner: "Chicken stir-fry",
+          },
+          {
+            day: "Day 7",
+            breakfast: "Pancakes with berries",
+            lunch: "Veggie wrap",
+            dinner: "Grilled shrimp & veggies",
+          },
         ],
-        tips: "Mock response — set GEMINI_API_KEY for live AI.",
+        tips: "Stay consistent, focus on form, and listen to your body!",
       });
     }
 
