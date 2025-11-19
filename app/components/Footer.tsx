@@ -1,6 +1,6 @@
 "use client";
 
-import { Dumbbell, Heart, Github, Twitter, Linkedin } from "lucide-react";
+import { Dumbbell, Heart, Github, User, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -17,33 +17,33 @@ export default function Footer() {
             <h3 className="font-semibold text-gray-900 dark:text-white mb-3 text-sm uppercase tracking-wide">
               Connect
             </h3>
-            <div className="flex gap-3">
+            <div className="flex gap-4 d-flex align-items-center">
               <a
-                href="https://github.com"
+                href="https://vigneshgbe.neocities.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-800"
-                aria-label="GitHub"
+                aria-label="User"
               >
-                <Github className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                <User className="w-5 h-5 text-gray-700 dark:text-gray-300" />
               </a>
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-800"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-              </a>
-              <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/vigneshgbe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-800"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+              </a>
+              <a
+                href="https://github.com/vigneshgbe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-800"
+                aria-label="GitHub"
+              >
+                <Github className="w-5 h-5 text-gray-700 dark:text-gray-300" />
               </a>
             </div>
           </div>
